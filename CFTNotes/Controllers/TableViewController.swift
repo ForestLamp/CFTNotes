@@ -38,13 +38,18 @@ class TableViewController: UITableViewController {
     
     // MARK: Table View Delegate
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let note = notes[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, complete in
             StorageManager.deleteObject(note)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            complete(true)
         }
-        return [deleteAction]
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+               configuration.performsFirstActionWithFullSwipe = true
+               return configuration
     }
 
 
