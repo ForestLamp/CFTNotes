@@ -36,7 +36,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="Pn9-0X-jR4">
                             <connections>
                                 <action selector="addNewNotes:" destination="r81-ba-kSY" id="jLD-eM-cX7"/>
-                                <segue destination="Pq3-C8-9qr" kind="show" id="zVK-jg-16Y"/>
+                                <segue destination="3Al-vf-ok8" kind="presentation" modalPresentationStyle="fullScreen" id="Zvx-w9-Ulp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -45,56 +45,70 @@
             </objects>
             <point key="canvasLocation" x="768.11594202898561" y="142.63392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Notes View Controller-->
         <scene sceneID="faP-vr-sxT">
             <objects>
-                <viewController id="Pq3-C8-9qr" sceneMemberID="viewController">
+                <viewController id="Pq3-C8-9qr" customClass="NotesViewController" customModule="CFTNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gQC-7b-Mex">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ваша заметка..." translatesAutoresizingMaskIntoConstraints="NO" id="czQ-j7-G1J">
-                                <rect key="frame" x="0.0" y="127" width="414" height="471"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-j7-G1J">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Это предупреждение возникает из-за TextView. При принял TextView в раскадровке и Вы проверили тип DataDetector как номер телефона, Link и так далее опций в раскадровке, когда поведение «Редактирование» включено.
+
+- Если режим «Редактирование» включен, и вы проверили номер телефона, ссылку и другой вариант.
+
+- Если режим «Редактирование» включен, то DataDetector типа работает по умолчанию.
+
+Решения:
+
+1. Если «Редактируемый» включен, то снять все опции типа DataDetector.
+
+Примечание: Если предупреждение не идет , то , пожалуйста , удалите TextView очистите код и добавьте TextView. Потому что какое - то время это кэш доступен в Xcode. Надеюсь , что это будет помогает.
+
+Счастливый Coding .. :)
+
+TextView с опцией DataDetector: </string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Pq3-C8-9qr" id="hgI-O6-m4s"/>
+                                </connections>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Заголовок заметки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NXC-HV-y4T">
-                                <rect key="frame" x="0.0" y="88" width="414" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="paX-5I-bIl">
-                                <rect key="frame" x="0.0" y="631" width="414" height="231"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="231" id="HUK-nc-cQh"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m9l-eg-BYy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="m9l-eg-BYy" firstAttribute="trailing" secondItem="NXC-HV-y4T" secondAttribute="trailing" id="20v-Gq-EFC"/>
-                            <constraint firstItem="paX-5I-bIl" firstAttribute="bottom" secondItem="m9l-eg-BYy" secondAttribute="bottom" id="6E2-xg-6Io"/>
-                            <constraint firstItem="paX-5I-bIl" firstAttribute="trailing" secondItem="m9l-eg-BYy" secondAttribute="trailing" id="IO7-PF-lfD"/>
-                            <constraint firstItem="czQ-j7-G1J" firstAttribute="top" secondItem="NXC-HV-y4T" secondAttribute="bottom" constant="5" id="MFY-az-QgD"/>
-                            <constraint firstItem="czQ-j7-G1J" firstAttribute="trailing" secondItem="m9l-eg-BYy" secondAttribute="trailing" id="RT3-BH-tQ9"/>
-                            <constraint firstItem="NXC-HV-y4T" firstAttribute="leading" secondItem="m9l-eg-BYy" secondAttribute="leading" id="XVG-Xv-UFH"/>
-                            <constraint firstItem="paX-5I-bIl" firstAttribute="top" secondItem="czQ-j7-G1J" secondAttribute="bottom" constant="33" id="aae-M8-Ufy"/>
-                            <constraint firstItem="paX-5I-bIl" firstAttribute="leading" secondItem="m9l-eg-BYy" secondAttribute="leading" id="lW5-Tq-ubp"/>
-                            <constraint firstItem="NXC-HV-y4T" firstAttribute="top" secondItem="m9l-eg-BYy" secondAttribute="top" id="nNE-oX-0td"/>
-                            <constraint firstItem="czQ-j7-G1J" firstAttribute="leading" secondItem="m9l-eg-BYy" secondAttribute="leading" id="rTJ-m9-WRL"/>
+                            <constraint firstItem="m9l-eg-BYy" firstAttribute="trailing" secondItem="czQ-j7-G1J" secondAttribute="trailing" constant="20" id="LWt-Ru-QzA"/>
+                            <constraint firstItem="czQ-j7-G1J" firstAttribute="top" secondItem="m9l-eg-BYy" secondAttribute="top" constant="20" id="aYZ-Ul-d5D"/>
+                            <constraint firstItem="czQ-j7-G1J" firstAttribute="leading" secondItem="m9l-eg-BYy" secondAttribute="leading" constant="20" id="hpt-FN-Ick"/>
+                            <constraint firstItem="m9l-eg-BYy" firstAttribute="bottom" secondItem="czQ-j7-G1J" secondAttribute="bottom" constant="20" id="xoV-3T-z43"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YR4-X4-PTJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9gP-cx-JXV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jR9-7S-YdG">
+                            <connections>
+                                <action selector="cancelAction:" destination="Pq3-C8-9qr" id="00u-JB-qUW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9gP-cx-JXV">
+                            <connections>
+                                <segue destination="1u4-Ji-Pvd" kind="unwind" unwindAction="unwindSegue:" id="JTy-X6-nWU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="fullNotesField" destination="czQ-j7-G1J" id="IOl-Wu-2y0"/>
+                        <outlet property="saveButton" destination="9gP-cx-JXV" id="TxT-h8-e5y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttn-7F-dtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1u4-Ji-Pvd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1489.8550724637682" y="142.63392857142856"/>
+            <point key="canvasLocation" x="2183" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EZ8-o6-ay1">
@@ -114,14 +128,34 @@
             </objects>
             <point key="canvasLocation" x="-142.02898550724638" y="142.63392857142856"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zvd-Ed-IPe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Al-vf-ok8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f9h-P1-dyd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pq3-C8-9qr" kind="relationship" relationship="rootViewController" id="Qlz-rz-TBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ne1-FD-WGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="143"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Photo" width="195" height="196"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
