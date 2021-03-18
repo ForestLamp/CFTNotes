@@ -5,27 +5,15 @@
 //  Created by a_sid on 17.03.2021.
 //
 
-import UIKit
+import RealmSwift
 
 
-struct Notes {
+class Notes: Object {
     
-    var name: String
+    @objc dynamic var name = ""
     
-    static let testMassive = [
-        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
-        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
-        "Speak Easy", "Morris Pub", "Вкусные истории",
-        "Классик", "Love&Life", "Шок", "Бочка"
-    ]
-    
-    static func getNotes() -> [Notes]{
-        
-        var notes = [Notes]()
-        
-        for note in testMassive {
-            notes.append(Notes(name: note))
-        }
-        return notes
+    convenience init(name: String) {
+        self.init()
+        self.name = name
     }
 }

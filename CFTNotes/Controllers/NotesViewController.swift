@@ -9,9 +9,8 @@ import UIKit
 
 class NotesViewController: UIViewController {
     
-    var newNote: Notes?
-
-// MARK: Outlets & Actions
+    var currentNote: Notes?
+    
     
 // TextView
     @IBOutlet weak var fullNotesField: UITextView!
@@ -26,15 +25,18 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         fullNotesField.delegate = self
  
-//Отключение кнопки Save если заметка не набиралась
-    // saveButton.isEnabled = false
-
         fullNotesField.font = UIFont(name: "Avenir-Book", size: 20)
         fullNotesField.backgroundColor = view.self.backgroundColor
         fullNotesField.layer.cornerRadius = 15
+ 
+        // Плейсхолдер
+        fullNotesField.text = "Placeholder"
+        fullNotesField.textColor = UIColor.lightGray
+        fullNotesField.returnKeyType = .done
+        fullNotesField.delegate = self
     
 // Наблюдатель начало редактирования
         NotificationCenter.default.addObserver(self,
@@ -48,6 +50,8 @@ class NotesViewController: UIViewController {
 // Плейсхолдер для TextView (надо допилить, не удаляется)
         //        fullNotesField.text = "Placeholder"
         //        fullNotesField.textColor = UIColor.lightGray
+        
+        setupEditScreen()
         
     }
 
@@ -78,44 +82,82 @@ class NotesViewController: UIViewController {
 
 // Сохраняем данные
     
-    func saveNewNote() {
-        newNote = Notes(name: fullNotesField.text)
+    func saveNote() {
+
+        let newNote = Notes(name: fullNotesField.text!)
+        if currentNote != nil {
+            try! realm.write {
+                currentNote?.name = newNote.name
+            }
+        } else {
+            StorageManager.saveObject(newNote)
+        }
+    }
+
+// Проверим содержимое
+    private func setupEditScreen (){
+        if currentNote != nil {
+            
+            setupNavigationBar()
+            fullNotesField.text = currentNote?.name
+        }
     }
     
-
+    private func setupNavigationBar() {
+        
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = "Редактирование"
+        saveButton.isEnabled = true
+    }
+    
 }
 
-// MARK: UITextFieldDelegate
+// MARK: UITextViewDelegate
 
-extension NotesViewController: UITextFieldDelegate, UITextViewDelegate{
+extension NotesViewController: UITextViewDelegate {
     
-// Скрываем клавиатуру по нажанию на Done в заголовке (Временно не используем)
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-    
-   
 // Меняем бэкграунд в зависимости от ситуации (редактируем текст или нет)
   
     func textViewDidBeginEditing(_ textView: UITextView) {
         fullNotesField.backgroundColor = .white
         fullNotesField.textColor = .gray
+        
+// Плейсхолдер
+        if textView.text == "Placeholder" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         fullNotesField.backgroundColor = self.view.backgroundColor
         fullNotesField.textColor = .black
+// Плейсхолдер
+        if textView.text == "" {
+            textView.text = "Placeholder"
+            textView.textColor = UIColor.lightGray
+        }
+
     }
     
 // Отключим кнопку сохранения если текст заметки не вводился
-//    @objc private func textFieldChanged() {
-//        if fullNotesField.text?.isEmpty == false {
-//            saveButton.isEnabled = true
-//        } else {
-//            saveButton.isEnabled = false
-//        }
-//    }
+    @objc private func textFieldChanged() {
+        if fullNotesField.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+    }
 }
 
     

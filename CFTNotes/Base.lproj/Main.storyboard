@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Pq3-C8-9qr" kind="show" identifier="showDetail" id="ZnF-OI-8av"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,27 +53,12 @@
             <objects>
                 <viewController id="Pq3-C8-9qr" customClass="NotesViewController" customModule="CFTNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gQC-7b-Mex">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-j7-G1J">
-                                <rect key="frame" x="20" y="76" width="374" height="712"/>
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Это предупреждение возникает из-за TextView. При принял TextView в раскадровке и Вы проверили тип DataDetector как номер телефона, Link и так далее опций в раскадровке, когда поведение «Редактирование» включено.
-
-- Если режим «Редактирование» включен, и вы проверили номер телефона, ссылку и другой вариант.
-
-- Если режим «Редактирование» включен, то DataDetector типа работает по умолчанию.
-
-Решения:
-
-1. Если «Редактируемый» включен, то снять все опции типа DataDetector.
-
-Примечание: Если предупреждение не идет , то , пожалуйста , удалите TextView очистите код и добавьте TextView. Потому что какое - то время это кэш доступен в Xcode. Надеюсь , что это будет помогает.
-
-Счастливый Coding .. :)
-
-TextView с опцией DataDetector: </string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -108,7 +96,7 @@ TextView с опцией DataDetector: </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttn-7F-dtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1u4-Ji-Pvd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2183" y="143"/>
+            <point key="canvasLocation" x="1516" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EZ8-o6-ay1">
@@ -126,7 +114,7 @@ TextView с опцией DataDetector: </string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Db-3E-jh0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.02898550724638" y="142.63392857142856"/>
+            <point key="canvasLocation" x="768" y="-573"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zvd-Ed-IPe">
@@ -144,9 +132,12 @@ TextView с опцией DataDetector: </string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne1-FD-WGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483" y="143"/>
+            <point key="canvasLocation" x="1516" y="-573"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZnF-OI-8av"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

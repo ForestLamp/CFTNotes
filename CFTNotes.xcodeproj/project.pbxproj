@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010B97B0AB9D45796946CC17 /* Pods_CFTNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01610B65E2235D03ACB340 /* Pods_CFTNotes.framework */; };
 		CE035E552600A99100FA52F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE035E542600A99100FA52F0 /* AppDelegate.swift */; };
 		CE035E572600A99100FA52F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE035E562600A99100FA52F0 /* SceneDelegate.swift */; };
 		CE035E5C2600A99100FA52F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE035E5A2600A99100FA52F0 /* Main.storyboard */; };
@@ -14,11 +15,14 @@
 		CE035E612600A99500FA52F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE035E602600A99500FA52F0 /* Assets.xcassets */; };
 		CE035E642600A99500FA52F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE035E622600A99500FA52F0 /* LaunchScreen.storyboard */; };
 		CE035E712600AAAD00FA52F0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE035E702600AAAD00FA52F0 /* TableViewController.swift */; };
+		CE35173A260365F6009E3ED7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE351739260365F6009E3ED7 /* StorageManager.swift */; };
 		CEF179702601D43500C0E13E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1796F2601D43500C0E13E /* Model.swift */; };
 		CEF1797A2601F68500C0E13E /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF179792601F68500C0E13E /* NotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D01610B65E2235D03ACB340 /* Pods_CFTNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFTNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C0076ACDEC9C6BBF43E652 /* Pods-CFTNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFTNotes.debug.xcconfig"; path = "Target Support Files/Pods-CFTNotes/Pods-CFTNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		CE035E512600A99100FA52F0 /* CFTNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFTNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE035E542600A99100FA52F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE035E562600A99100FA52F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +32,10 @@
 		CE035E632600A99500FA52F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE035E652600A99500FA52F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE035E702600AAAD00FA52F0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		CE351739260365F6009E3ED7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CEF1796F2601D43500C0E13E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CEF179792601F68500C0E13E /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		EEAB0F21981E7B6C9ADF3595 /* Pods-CFTNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFTNotes.release.xcconfig"; path = "Target Support Files/Pods-CFTNotes/Pods-CFTNotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010B97B0AB9D45796946CC17 /* Pods_CFTNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				CE035E532600A99100FA52F0 /* CFTNotes */,
 				CE035E522600A99100FA52F0 /* Products */,
+				F61DDA627A2E113E03909036 /* Pods */,
+				DD25950FEAC3B8AAAADE0759 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,8 +97,26 @@
 				CE035E702600AAAD00FA52F0 /* TableViewController.swift */,
 				CEF179792601F68500C0E13E /* NotesViewController.swift */,
 				CEF1796F2601D43500C0E13E /* Model.swift */,
+				CE351739260365F6009E3ED7 /* StorageManager.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD25950FEAC3B8AAAADE0759 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D01610B65E2235D03ACB340 /* Pods_CFTNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F61DDA627A2E113E03909036 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73C0076ACDEC9C6BBF43E652 /* Pods-CFTNotes.debug.xcconfig */,
+				EEAB0F21981E7B6C9ADF3595 /* Pods-CFTNotes.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE035E682600A99500FA52F0 /* Build configuration list for PBXNativeTarget "CFTNotes" */;
 			buildPhases = (
+				85AF24B1A98812BD6A1698FC /* [CP] Check Pods Manifest.lock */,
 				CE035E4D2600A99100FA52F0 /* Sources */,
 				CE035E4E2600A99100FA52F0 /* Frameworks */,
 				CE035E4F2600A99100FA52F0 /* Resources */,
+				318A0469FFF428B4271DC8D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +186,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		318A0469FFF428B4271DC8D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CFTNotes/Pods-CFTNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CFTNotes/Pods-CFTNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CFTNotes/Pods-CFTNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85AF24B1A98812BD6A1698FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CFTNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE035E4D2600A99100FA52F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -165,6 +236,7 @@
 				CEF179702601D43500C0E13E /* Model.swift in Sources */,
 				CE035E552600A99100FA52F0 /* AppDelegate.swift in Sources */,
 				CEF1797A2601F68500C0E13E /* NotesViewController.swift in Sources */,
+				CE35173A260365F6009E3ED7 /* StorageManager.swift in Sources */,
 				CE035E572600A99100FA52F0 /* SceneDelegate.swift in Sources */,
 				CE035E5F2600A99100FA52F0 /* CFTNotes.xcdatamodeld in Sources */,
 				CE035E712600AAAD00FA52F0 /* TableViewController.swift in Sources */,
@@ -311,6 +383,7 @@
 		};
 		CE035E692600A99500FA52F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73C0076ACDEC9C6BBF43E652 /* Pods-CFTNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,12 +397,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.CFTNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CE035E6A2600A99500FA52F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEAB0F21981E7B6C9ADF3595 /* Pods-CFTNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -343,7 +417,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.CFTNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
