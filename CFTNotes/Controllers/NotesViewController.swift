@@ -35,7 +35,7 @@ class NotesViewController: UIViewController {
         // Плейсхолдер
         fullNotesField.text = "Placeholder"
         fullNotesField.textColor = UIColor.lightGray
-        fullNotesField.returnKeyType = .done
+        fullNotesField.returnKeyType = .default
         fullNotesField.delegate = self
     
 // Наблюдатель начало редактирования
@@ -132,12 +132,12 @@ extension NotesViewController: UITextViewDelegate {
         }
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-        }
-        return true
-    }
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if text == "\n" {
+//            textView.resignFirstResponder()
+//        }
+//        return true
+//    }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         fullNotesField.backgroundColor = self.view.backgroundColor
