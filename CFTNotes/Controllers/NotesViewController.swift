@@ -75,9 +75,11 @@ class NotesViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         fullNotesField.resignFirstResponder()
     }
+
+// Сохраняем данные
     
     func saveNewNote() {
-        newNote = Notes(fullPreview: fullNotesField.text)
+        newNote = Notes(name: fullNotesField.text)
     }
     
 

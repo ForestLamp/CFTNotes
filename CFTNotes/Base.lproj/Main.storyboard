@@ -36,7 +36,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="Pn9-0X-jR4">
                             <connections>
                                 <action selector="addNewNotes:" destination="r81-ba-kSY" id="jLD-eM-cX7"/>
-                                <segue destination="3Al-vf-ok8" kind="presentation" modalPresentationStyle="fullScreen" id="Zvx-w9-Ulp"/>
+                                <segue destination="3Al-vf-ok8" kind="presentation" modalTransitionStyle="crossDissolve" id="Zvx-w9-Ulp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -50,11 +50,11 @@
             <objects>
                 <viewController id="Pq3-C8-9qr" customClass="NotesViewController" customModule="CFTNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gQC-7b-Mex">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-j7-G1J">
-                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <rect key="frame" x="20" y="76" width="374" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Это предупреждение возникает из-за TextView. При принял TextView в раскадровке и Вы проверили тип DataDetector как номер телефона, Link и так далее опций в раскадровке, когда поведение «Редактирование» включено.
 
@@ -134,7 +134,7 @@ TextView с опцией DataDetector: </string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Al-vf-ok8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f9h-P1-dyd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -144,7 +144,7 @@ TextView с опцией DataDetector: </string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne1-FD-WGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="143"/>
+            <point key="canvasLocation" x="1483" y="143"/>
         </scene>
     </scenes>
     <resources>

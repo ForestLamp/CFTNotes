@@ -64,7 +64,6 @@
 			children = (
 				CE035E5A2600A99100FA52F0 /* Main.storyboard */,
 				CEF1797C260324C500C0E13E /* Controllers */,
-				CEF1797D260324E200C0E13E /* Models */,
 				CE035E652600A99500FA52F0 /* Info.plist */,
 				CE035E6C2600A9B100FA52F0 /* Supporting Files */,
 			);
@@ -88,16 +87,9 @@
 			children = (
 				CE035E702600AAAD00FA52F0 /* TableViewController.swift */,
 				CEF179792601F68500C0E13E /* NotesViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CEF1797D260324E200C0E13E /* Models */ = {
-			isa = PBXGroup;
-			children = (
 				CEF1796F2601D43500C0E13E /* Model.swift */,
 			);
-			path = Models;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

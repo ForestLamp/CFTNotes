@@ -8,6 +8,8 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+
+    var notes = Notes.getNotes()
     
     
     @IBAction func addNewNotes(_ sender: UIBarButtonItem) {
@@ -16,19 +18,6 @@ class TableViewController: UITableViewController {
     
    // var notes: [String] = []
 
-    
-    
-    var cftNotes = ["Do", "DODO"]
-    
-    func getNotes() -> [Notes] {
-        var notes = [Notes]()
-        
-        for note in cftNotes {
-            notes.append(Notes(fullPreview: "Полная заметка"))
-        }
-        return notes
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +30,15 @@ class TableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cftNotes.count
+        return  notes.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        
+        let note = notes[indexPath.row]
+        cell.textLabel?.text = note.name
      
         return cell
     }
@@ -55,6 +46,11 @@ class TableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let notesVC = segue.source as? NotesViewController else {return}
+        notesVC.saveNewNote()
+        notes.append(notesVC.newNote!)
+        tableView.reloadData()
+        }
 
 }
