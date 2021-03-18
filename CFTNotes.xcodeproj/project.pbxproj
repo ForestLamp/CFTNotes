@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				CE035E5A2600A99100FA52F0 /* Main.storyboard */,
-				CEF1797C260324C500C0E13E /* Controllers */,
+				CEF1797C260324C500C0E13E /* Controllers & Models */,
 				CE035E652600A99500FA52F0 /* Info.plist */,
 				CE035E6C2600A9B100FA52F0 /* Supporting Files */,
 			);
@@ -91,15 +91,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CEF1797C260324C500C0E13E /* Controllers */ = {
+		CEF1797C260324C500C0E13E /* Controllers & Models */ = {
 			isa = PBXGroup;
 			children = (
 				CE035E702600AAAD00FA52F0 /* TableViewController.swift */,
 				CEF179792601F68500C0E13E /* NotesViewController.swift */,
-				CEF1796F2601D43500C0E13E /* Model.swift */,
 				CE351739260365F6009E3ED7 /* StorageManager.swift */,
+				CEF1796F2601D43500C0E13E /* Model.swift */,
 			);
-			path = Controllers;
+			path = "Controllers & Models";
 			sourceTree = "<group>";
 		};
 		DD25950FEAC3B8AAAADE0759 /* Frameworks */ = {

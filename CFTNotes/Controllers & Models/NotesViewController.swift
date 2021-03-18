@@ -33,7 +33,7 @@ class NotesViewController: UIViewController {
         fullNotesField.layer.cornerRadius = 15
  
         // Плейсхолдер
-        fullNotesField.text = "Placeholder"
+        fullNotesField.text = "Ваш текст"
         fullNotesField.textColor = UIColor.lightGray
         fullNotesField.returnKeyType = .default
         fullNotesField.delegate = self
@@ -126,7 +126,7 @@ extension NotesViewController: UITextViewDelegate {
         fullNotesField.textColor = .gray
         
 // Плейсхолдер
-        if textView.text == "Placeholder" {
+        if textView.text == "Ваш текст" {
             textView.text = ""
             textView.textColor = UIColor.black
         }
@@ -144,7 +144,7 @@ extension NotesViewController: UITextViewDelegate {
         fullNotesField.textColor = .black
 // Плейсхолдер
         if textView.text == "" {
-            textView.text = "Placeholder"
+            textView.text = "Ваш текст"
             textView.textColor = UIColor.lightGray
         }
 
